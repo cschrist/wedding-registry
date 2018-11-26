@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Here Lies MECC Regular";
+  src: url("font/here_lies_mecc.eot?") format("eot"),
+    url("font/here_lies_mecc.woff") format("woff"),
+    url("font/here_lies_mecc.ttf") format("truetype"),
+    url("font/here_lies_mecc.svg#Here-Lies-MECC") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Here Lies MECC Regular";
+  background: #222;
+  color: #fafafa;
+  margin: 0;
+}
+
+::placeholder {
+  color: #bbb
+}
