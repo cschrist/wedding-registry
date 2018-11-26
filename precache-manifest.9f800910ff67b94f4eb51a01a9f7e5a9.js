@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "817b4e48ea35de01f5da",
-    "url": "/wedding-registry/static/js/main.817b4e48.chunk.js"
+    "revision": "7221dde1520553fecd89",
+    "url": "/wedding-registry/static/js/main.7221dde1.chunk.js"
   },
   {
     "revision": "e7810a2c2ca04667967d",
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/wedding-registry/static/js/runtime~main.483b618c.js"
   },
   {
-    "revision": "56b1b77d27665b2d4cdae776c403568d",
+    "revision": "d0a3bef911062cc994ae561b8ad5c453",
     "url": "/wedding-registry/index.html"
   }
 ];
