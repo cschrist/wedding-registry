@@ -6,7 +6,7 @@ class Item extends Component {
     const { item, price } = this.props;
     return (
       <div className={css(styles.item)}>
-        <img src={`/img/${item}.png`} alt={item} className={css(styles.img)} />
+        <img src={`img/${item}.png`} alt={item} className={css(styles.img)} />
         <div>{item}</div>
         <div>${price}</div>
       </div>

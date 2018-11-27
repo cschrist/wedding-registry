@@ -13,7 +13,8 @@ class App extends Component {
       wheel: '',
       clothing: '',
       food: '',
-      total: 0
+      total: 0,
+      message: ''
     };
     this.itemPrices = {
       wagon: 150,
@@ -31,6 +32,16 @@ class App extends Component {
     }
     this.updateQty = this.updateQty.bind(this);
     this.stripe = window.Stripe('pk_live_Llp3ingWPhiXLLSm9fsnRGcd', {betas: ['checkout_beta_3']});
+  }
+
+  componentDidMount() {
+    let amount = (new URLSearchParams(window.location.search)).get('m');
+    if (amount) {
+      amount = parseInt(amount, 10);
+      this.setState({
+        message: `Thank you for your gift of $${amount.toFixed(2)}! We appreciate your support as we begin our journey as a married couple.`
+      });
+    }
   }
 
   updateQty(item, count) {
@@ -125,6 +136,15 @@ class App extends Component {
         textAlign: 'center',
         lineHeight: '1.5em'
       }}>
+        {this.state.message !== '' ?
+          (
+            <div>
+              <h2 className={css(styles.heading)}>{this.state.message}</h2>
+              <hr className={css(styles.divider)}/>
+            </div>
+          )
+          : null}
+
         <h1 className={css(styles.heading)}>Registry</h1>
         <div>
           <img
@@ -262,8 +282,8 @@ class App extends Component {
                   console.log(items);
                   this.stripe.redirectToCheckout({
                     items: items,
-                    successUrl: 'https://google.com',
-                    cancelUrl: 'https://google.com',
+                    successUrl: 'https://cschrist.github.io/wedding-registry/?m=' + this.state.total,
+                    cancelUrl: 'https://cschrist.github.io/wedding-registry/',
                   }).then(function (result) {
                     console.log(result);
                   });
